@@ -91,3 +91,24 @@ function lengthOfObject<T extends {length: number}>(obj: T): number {
 
 // * Partial <T>
 
+type Todo = {
+  title: string,
+  description: string,
+  completed: boolean,
+}
+
+function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>): Todo {
+  return {...todo, ...fieldsToUpdate};
+}
+
+const todo1 = {
+  title: "Learn TypeScript",
+  description: 'Study the basics of TypeScript',
+  completed: false,
+}
+
+const todo2 = updateTodo(todo1, {
+  description: "Study generics in TypeScript"
+});
+
+console.log(todo2);

@@ -47,17 +47,16 @@ function lengthOfObject(obj) {
     return obj.length;
 }
 lengthOfObject({ name: "Earth", length: 10 });
-// TODO Створіть загальну функцію яка приймає об'єкт та ключ як рядок.Функція повина повертати значення цього ключа з об'єкта
-// const  student = {
-//   name: "John",
-//   age: 25,
-// }
-// function getProperty<T,K extends keyof T>(obj: T, key: K): T[K] {
-//   return obj[key];
-// }
-// let studentName = getProperty(student, "name");
-// let studentAddress = getProperty(student, "age");
-// console.log(studentName);
-// console.log(studentAddress);
-// * Partial <T>
+function updateTodo(todo, fieldsToUpdate) {
+    return { ...todo, ...fieldsToUpdate };
+}
+const todo1 = {
+    title: "Learn TypeScript",
+    description: 'Study the basics of TypeScript',
+    completed: false,
+};
+const todo2 = updateTodo(todo1, {
+    description: "Study generics in TypeScript"
+});
+console.log(todo2);
 //# sourceMappingURL=index.js.map
